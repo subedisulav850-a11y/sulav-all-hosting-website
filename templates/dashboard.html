@@ -1,0 +1,19 @@
+<h2>Sulav HOSTING PANEL</h2>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+<input type="file" name="file">
+<button>UPLOAD ZIP</button>
+</form>
+
+<a href="/stop">STOP</a>
+
+<h3>Live Logs</h3>
+
+<div id="logs" style="height:300px;overflow:auto;border:1px solid lime;"></div>
+
+<script>
+var evt=new EventSource("/logs");
+evt.onmessage=function(e){
+document.getElementById("logs").innerHTML+=e.data+"<br>";
+}
+</script>

@@ -1,0 +1,15 @@
+<h2>Select file to run</h2>
+
+<form method="post" action="/run">
+
+<input type="hidden" name="project" value="{{project}}">
+
+<select name="file">
+{% for f in files %}
+<option value="{{f}}">{{f}}</option>
+{% endfor %}
+</select>
+
+<button>START</button>
+
+</form>
